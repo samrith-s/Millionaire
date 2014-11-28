@@ -78,11 +78,11 @@ config.lifelines = {
             {name: "default", representation: "<img src='img/poll.png'/>"}
         ]},
         {name: "half", sequence: 0, states: [
-            {name: "complete", representation: "<img src='img/poll-disabled.png'/>"},
+            {name: "complete", representation: "<img src='img/50-50-disabled.png'/>"},
             {name: "default", representation: "<img src='img/50-50.png'/>"}
         ]},
         {name: "change", sequence: 0, states: [
-            {name: "complete", representation: "<img src='img/poll-disabled.png'/>"},
+            {name: "complete", representation: "<img src='img/change-disabled.png'/>"},
             {name: "default", representation: "<img src='img/change.png'/>"}
         ]}
     ]
