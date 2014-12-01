@@ -3,7 +3,7 @@ var quiz;
 config.quiz = {
     type: "environment",
     states: [
-        {name: "default", representation: "<div id='kbc-question'></div><div id='options-area'></div>"}
+        {name: "default", representation: "<div id='kbc-question'></div><div id='options-area'></div><div id='kbc-learn-more'>Learn More</div>"}
 //        {name: "correct", representation: "<div id='msgWindow'></div>"},
 //        {name: "wrong", representation: "<img src='img/questionwrong.png'/>"}
     ]
@@ -37,7 +37,8 @@ function loadQuestionBank() {
             optiones = {};
         }
 
-        new Question(q.statement, q.image, q.weight, options, q.help);
+        new Question(i+1, q.statement, q.image, q.weight, options, q.help);
+//        new Question(q.id, q.statement, q.image, q.weight, options, q.help);
     }
     return true;
 }
@@ -52,7 +53,8 @@ function loadQuestionBank() {
 
 
 var Question = Class({
-    initialize: function (name, image, weight, options, help) {
+    initialize: function (id, name, image, weight, options, help) {
+        this.id = id;
         this.name = name;
         this.image = image;
         this.weight = weight || 1;

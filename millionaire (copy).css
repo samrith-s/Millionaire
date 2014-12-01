@@ -32,6 +32,8 @@ img {
     left: 0;
 }
 
+/* Specify the location, height and width of the elements */
+
 #base img {
     width: 100%;
     height: 100%;
@@ -41,24 +43,30 @@ img {
     background: rgba(26, 188, 167, 0.1);
     width: 30%;
     left: 67%;
-    height: 63%;
+    height: 64%;
     top: 3%;
-    padding-top: 1%;
-
+    border: 2px solid #b8adde;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 3px 5px 90px black inset;
 }
 
 #ladder .location {
     position: relative !important;
+    /*background: rgba(240, 228, 55, 1);*/
     margin-top: 2px;
     margin-left: 8%;
     padding: 2%;
     height: 20px;
     width: 80%;
     text-align: center;
+    border-radius: 10px;
+    /*box-shadow:inset 3px 3px 3px #B3852A;*/
     color: white;
 }
 
 #lifelines {
+    /*background: rgba(26, 188, 167, 0.1);*/
     top: 68%;
     left: 67%;
     width: 30.7%;
@@ -66,6 +74,7 @@ img {
     text-align: center;
     color: white;
     position: relative;
+    /*border: 2px solid #b8adde;*/
 }
 
 #kbc-lifeline-panel {
@@ -74,8 +83,14 @@ img {
     height: 52%;
     width: 93%;
     padding: 3%;
+    background: rgba(1, 1, 1, 0.9);
+    border: 1px solid whitesmoke;
     overflow: hidden;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 3px 5px 90px black inset;
     font-size: 0.9em;
+    /*border-radius: 5px;*/
 }
 
 #kbc-lifeline-panel #default {
@@ -83,6 +98,7 @@ img {
     top: 26%;
     left: 0;
     padding: 0 5% 0 5%;
+    /*padding: 5%;*/
 
 }
 
@@ -93,7 +109,7 @@ img {
 }
 
 #life1-span {
-    top: 6% !important;
+    top: 5% !important;
 }
 
 #lifelines .lifeline {
@@ -109,10 +125,10 @@ img {
 }
 
 .lifeline-text {
-    padding: 5px;
-    background: rgba(1, 1, 1, 0.8);
     border-radius: 5px;
-    border: 1px solid grey;
+    border: 1px solid whitesmoke;
+    padding: 5px;
+
     position: absolute;
     color: whitesmoke;
     top: 37%;
@@ -132,6 +148,8 @@ img {
 
 #kbc-lifeline{
     background: none repeat scroll 0 0;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
     color: white;
     display: none;
     font-size: 1em;
@@ -150,27 +168,27 @@ img {
 
 }
 #messageOk, #messageCancel {
+    border: 1px solid white;
     padding: 3%;
     color: white;
     cursor: pointer;
+    border-radius: 10px;
     margin: 3%;
-    border: 1px solid whitesmoke;
-    border-radius: 5px;
 
 }
 
 #messageOk2 {
+    border: 1px solid white;
     bottom: 5%;
     position: absolute;
     left: 35%;
     padding: 2% 10%;
     color: white;
     cursor: pointer;
-    border: 1px solid whitesmoke;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 #player {
-
+    border-radius: 20px;
 }
 
 #ladder .location .completed {
@@ -178,6 +196,9 @@ img {
 }
 
 #poll {
+    border: 1px solid whitesmoke;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     color: white;
     display: none;
     font-size: 1em;
@@ -188,9 +209,12 @@ img {
     position: absolute;
     width: 28.3%;
     z-index: 2;
+    box-shadow: 3px 5px 90px black inset;
 }
 
 #poll .location {
+    /*background-color: red;*/
+    /*border-radius: 1px 20px 20px 1px;*/
     margin-top: 5%;
     height: auto;
 }
@@ -208,6 +232,8 @@ img {
 #message {
     height: 23%;
     width: 30%;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
     color: whitesmoke;
     position: absolute;
     top: 35%;
@@ -215,7 +241,5 @@ img {
     z-index: 1001;
     text-align: center;
     padding-top: 7%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    box-shadow: 3px 5px 90px black inset;
 }

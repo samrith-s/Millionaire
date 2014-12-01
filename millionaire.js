@@ -18,18 +18,26 @@ $(function () {
 
 function initTheme() {
     loadConfig(base);
-    $("#message").css({"background": "url(img/kbc-endgame-texture.jpg)", opacity: "0.9"})
+    $("#message").css({"background": "url(img/kbc-endgame-texture.png)", opacity: "0.9"});
 
     loadConfig(ladder);
+    $("#ladder").css({"background": "url(img/kbc-ladder-texture.png)", opacity: "0.9"});
+
     loadConfig(lifelines);
+    $("#lifelines .location").addClass("lifeline");
+    $("#kbc-lifeline-panel").removeClass("lifeline");
+    $("#kbc-lifeline-panel").css({"background": "url(img/kbc-lifeline-panel-texture.png)", opacity: "0.9"})
+
     loadConfig(kbc_lifeline);
     $("#kbc_lifeline").attr("id", "kbc-lifeline");
-    $("#kbc-lifeline").css({"background": "url(img/kbc-lifeline-panel-texture.jpg)", opacity: "0.9"});
+    $("#kbc-lifeline").css({"background": "url(img/kbc-lifeline-panel-texture.png)", opacity: "0.9"});
 
     loadConfig(poll);
-    $("#poll").css({"background": "url(img/kbc-lifeline-panel-texture.jpg)", opacity: "0.9"});
+    $("#poll").css({"background": "url(img/kbc-lifeline-panel-texture.png)", opacity: "0.9"});
     initQuiz();
+
     loadConfig(player);
+
     runGlobalObservers();
     player.setState('1');
     player.location(ladder.kbc_ladder01_text);
@@ -40,18 +48,15 @@ function initTheme() {
 
 function runGlobalObservers() {
     $("#kbc-lifeline1-img").mouseover(function() {
-        $("#lifelines").append($('<div />', {id: "life1", class:"lifeline-text", text: "Audience Poll"}))
-        $("#life1").css({"background": "url(img/kbc-lifeline-texture.jpg)", opacity: "0.9"});
+        $("#lifelines").append($('<div />', {id: "life1", class:"lifeline-text", text: "Audience Poll"}));
     });
 
     $("#kbc-lifeline2-img").mouseover(function() {
-        $("#lifelines").append($('<div />', {id: "life2", class:"lifeline-text", text: "50-50"}))
-        $("#life2").css({"background": "url(img/kbc-lifeline-texture.jpg)", opacity: "0.9"});
+        $("#lifelines").append($('<div />', {id: "life2", class:"lifeline-text", text: "50-50"}));
     });
 
     $("#kbc-lifeline3-img").mouseover(function() {
-        $("#lifelines").append($('<div />', {id: "life3", class:"lifeline-text", text: "Change Question"}))
-        $("#life3").css({"background": "url(img/kbc-lifeline-texture.jpg)", opacity: "0.9"});
+        $("#lifelines").append($('<div />', {id: "life3", class:"lifeline-text", text: "Change Question"}));
     });
 
     $("#lifelines .location").mouseout(function() {
@@ -78,27 +83,29 @@ function quizShuffle() {
 
 function answerHover() {
     $(".kbc-answer-block").mouseover(function() {
-        $("#"+$(this).attr("id")).css({"background": "rgba(255, 136, 0, 0.85)"});
+        $("#"+$(this).attr("id")).css({"background": "url(img/kbc-answer-hover-texture.png)"});
     });
     $(".kbc-answer-block").mouseout(function() {
-        $("#"+$(this).attr("id")).css({"background": "url(img/kbc-answer-texture.jpg)", opacity: "0.85"});
+        $("#"+$(this).attr("id")).css({"background": "url(img/kbc-answer-texture.png)"});
     });
 }
 
 function playGame() {
+    $("#player").css({"background": "url(img/kbc-player-texture.png)"});
     question = Question.getQuestion(1, flag);
     $('#quiz').fadeIn(function () {
         Question.showQuizPanel(quiz, question);
-        $("#kbc-question").css({"background": "url(img/kbc-question-texture.jpg)", opacity: "0.85"});
-        $(".kbc-answer-block").css({"background": "url(img/kbc-answer-texture.jpg)", opacity: "0.85"});
+        $("#kbc-question").css({"background": "url(img/kbc-question-texture.png)"});
+        $(".kbc-answer-block").css({"background": "url(img/kbc-answer-texture.png)"});
+
         answerHover();
     });
     $(question).unbind('answered').on('answered', function (e, data) {
         flag++;
         if (data.correct == "true") {
-            $("#"+data.id).css({"background": "rgba(0, 130, 0, 0.85)"});
+            $("#"+data.id).css({"background": "url(img/kbc-answer-right-texture.png)"});
             pointsEarned += parseInt(data.points);
-            $("#quiz").fadeOut(function () {
+            $("#quiz").delay(250).fadeOut(function () {
                 quiz.setState('default');
                 ladder[player.location().name].setState('complete');
                 if (player.location().name == 'kbc_ladder10_text')
@@ -124,32 +131,40 @@ function playGame() {
 
     $("#kbc-lifeline1-img").unbind('click').on('click', function () {
         if(pollSelected == false) {
-            $("#lifelines .location").css({"pointer-events": "none"});
-            $("#kbc-lifeline").html('If you use this lifeline, audience members will use touch pads to designate what they believe the correct answer to be. After the audience have chosen their choices, the results are displayed to the contestant in percentages in bar-graph format.').fadeIn();
-            $("#kbc-lifeline").append(   '<p><span id="messageOk">Use</span>' +
+            lifelines["kbc-lifeline-panel"].setState("kbc-lifeline-1");
+            $("#lifelines .lifeline").css({"pointer-events": "none"});
+
+            setLifeline(1);
+
+            $("#kbc-lifeline-1").html("<span id='life1-span'>This lifeline shows what Audience consider as the 'Right' answer in the form of a Bar Graph.</span>").fadeIn();
+            $("#life1-span").append(   '<p><span id="messageOk">Use</span>' +
                 '<span id="messageCancel">Cancel</span></p>');
-            $("#quiz").fadeOut();
+
+
 
             $("#messageOk").unbind('click').on('click', function () {
-                $("#kbc-lifeline").fadeOut();
                 $("#poll").fadeIn();
-                $("#poll").append('<div id="messageOk2">Ok</div>');
+                $("#poll").append('<div id="messageOk2">OK</div>');
                 pollSelected = true;
+                $("#kbc-lifeline-1 span").css({
+                    opacity: 0
+                });
 
                 usePoll();
 
                 $("#messageOk2").unbind('click').on('click', function () {
-                    $("#lifelines .location").css({"pointer-events": "auto"});
+                    $("#lifelines .lifeline").css({"pointer-events": "auto"});
                     $("#poll").fadeOut();
-                    $("#quiz").fadeIn();
+                    lifelines["kbc-lifeline-panel"].setState("default");
                     lifelines["kbc-lifeline1-img"].setState("complete");
+                    setLifeline();
                 });
 
             });
             $("#messageCancel").unbind('click').on('click', function (){
-                $("#lifelines .location").css({"pointer-events": "auto"});
-                $("#kbc-lifeline").fadeOut();
-                $("#quiz").fadeIn();
+                $("#lifelines .lifeline").css({"pointer-events": "auto"});
+                lifelines["kbc-lifeline-panel"].setState("default");
+                setLifeline();
             });
 
         }
@@ -158,57 +173,123 @@ function playGame() {
 
     $("#kbc-lifeline2-img").unbind('click').on('click', function () {
         if(halfSelected == false) {
-            $("#lifelines .location").css({"pointer-events": "none"});
+            lifelines["kbc-lifeline-panel"].setState("kbc-lifeline-2");
+            $("#lifelines .lifeline").css({"pointer-events": "none"});
 
-            //$("#half").addClass('lifeline-selected');
-            $("#kbc-lifeline").text("If you use this lifeline, the computer will randomly remove and eliminate two of the 'wrong' answers.").show();
-            $("#kbc-lifeline").append(   '<p><span id="messageOk">Use</span>' +
+            setLifeline(1);
+
+            $("#kbc-lifeline-2").html("<span id='life2-span'>This lifeline eliminates two 'Wrong' answers.</span>").fadeIn();
+            $("#life2-span").append(   '<p><span id="messageOk">Use</span>' +
                 '<span id="messageCancel">Cancel</span></p>');
-            $("#quiz").fadeOut();
+
             $("#messageOk").unbind('click').on('click', function () {
                 halfSelected = true;
                 $("#lifelines .location").css({"pointer-events": "auto"});
-                $("#kbc-lifeline").fadeOut();
                 useHalf();
-                $("#quiz").fadeIn();
                 lifelines["kbc-lifeline2-img"].setState("complete");
+                lifelines["kbc-lifeline-panel"].setState("default");
+                setLifeline();
+
             });
             $("#messageCancel").unbind('click').on('click', function (){
-                $("#lifelines .location").css({"pointer-events": "auto"});
-                $("#kbc-lifeline").fadeOut();
-                $("#quiz").fadeIn();
+                $("#lifelines .lifeline").css({"pointer-events": "auto"});
+                lifelines["kbc-lifeline-panel"].setState("default");
+                setLifeline();
             });
         }
     });
     $("#kbc-lifeline3-img").unbind('click').on('click', function () {
 
         if(changeSelected == false) {
-            $("#lifelines .location").css({"pointer-events": "none"});
-            //$("#change").addClass('lifeline-selected');
-            $("#kbc-lifeline").text("If you use this lifeline, the computer will replace this question with another of the same monetary value.").fadeIn();
-            $("#kbc-lifeline").append(   '<p><span id="messageOk">Use</span>' +
+            lifelines["kbc-lifeline-panel"].setState("kbc-lifeline-3");
+            $("#lifelines .lifeline").css({"pointer-events": "none"});
+
+            setLifeline(1);
+
+            $("#kbc-lifeline-3").html("<span id='life3-span'>This lifeline discards the current question and presents a new question without any cost.</span>").fadeIn();
+            $("#life3-span").append(   '<p><span id="messageOk">Use</span>' +
                 '<span id="messageCancel">Cancel</span></p>');
-            $("#quiz").hide();
+
             $("#messageOk").unbind('click').on('click', function () {
                 changeSelected = true;
-                $("#lifelines .location").css({"pointer-events": "auto"});
-                $("#kbc-lifeline").fadeOut();
+                $("#lifelines .lifeline").css({"pointer-events": "auto"});
                 flag++;
                 playGame();
                 lifelines["kbc-lifeline3-img"].setState("complete");
+                lifelines["kbc-lifeline-panel"].setState("default");
+                setLifeline();
             });
         }
         $("#messageCancel").unbind('click').on('click', function (){
-            $("#lifelines .location").css({"pointer-events": "auto"});
-            $("#kbc-lifeline").fadeOut();
-            $("#quiz").fadeIn();
+            $("#lifelines .lifeline").css({"pointer-events": "auto"});
+            lifelines["kbc-lifeline-panel"].setState("default");
+            setLifeline();
         });
     });
+}
+
+function setLifeline(lifeline) {
+    switch(lifeline) {
+        case 1:
+            $("#lifelines").animate({
+                position: "absolute",
+                top: "55%",
+                height: "50%"
+
+            });
+            $("#kbc-lifeline-panel").css({
+                height: "56%",
+                background: "url(img/kbc-lifeline-panel2-texture.png)"
+            });
+            break;
+
+        case 2:
+            $("#lifelines").animate({
+                position: "absolute",
+                top: "54%",
+                height: "35.5%"
+
+            });
+            $("#kbc-lifeline-panel").css({
+                height: "58%"
+            });
+            break;
+
+        default:
+            $("#lifelines").animate({
+                position: "relative",
+                top: "68%",
+                height: "29%"
+            });
+            $("#kbc-lifeline-panel").css({
+                height: "52%",
+                background: "url(img/kbc-lifeline-panel-texture.png)"
+            });
+            $("#kbc-lifeline-1 span").css({
+                opacity: 1
+            });
+    }
+
 }
 
 function usePoll() {
     var chr = String.fromCharCode(65 + 1);
     var sum = 0;
+    var ctx = $("#abc").get(0).getContext("2d");
+    var data = {
+        labels: ["A", "B", "C", "D"],
+        datasets: [
+            {
+                label: "Poll",
+                fillColor: "rgba(220,220,220,0.5)",
+                strokeColor: "rgba(220,220,220,0.8)",
+                highlightFill: "rgba(220,220,220,0.75)",
+                highlightStroke: "rgba(220,220,220,1)",
+                data: []
+            }
+        ]
+    };
+
     for(var i = 0; i < question.options.length; i++) {
         if(i != question.options.length-1) {
             if(question.options[i].correct == "true") {
@@ -216,19 +297,26 @@ function usePoll() {
                 if((sum+random) > 100)
                     random -= ((sum+random)-100);
                 sum += random;
-                $("#"+String.fromCharCode(65 + i)).css({width: random+"%"});
+                data.datasets[0].data.push(random);
+                $("#bar"+String.fromCharCode(65 + i)).css({width: (random*0.9)+"%"});
             } else {
                 var random = randBetween(0, 50);
                 if((sum+random) > 100)
                     random -= ((sum+random)-100);
                 sum += random;
-                $("#"+String.fromCharCode(65 + i)).css({width: random+"%"});
+                data.datasets[0].data.push(random);
+                $("#bar"+String.fromCharCode(65 + i)).css({width: (random*0.9)+"%"});
             }
         } else {
-            random = 100-sum;
-            $("#"+String.fromCharCode(65 + i)).css({width: random+"%"});
+            random = (100-sum);
+            data.datasets[0].data.push(random);
+            $("#bar"+String.fromCharCode(65 + i)).css({width: (random*0.9)+"%"});
         }
     }
+
+    var myBarChart = new Chart(ctx).Bar(data, {
+
+    });
 }
 
 function useHalf() {

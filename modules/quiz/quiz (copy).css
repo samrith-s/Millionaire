@@ -9,9 +9,12 @@
 }
 
 #kbc-question{
+    border-radius:0px 50px 0px 50px;
     height: 35%;
     width: 89%;
     color: white;
+    box-shadow: 3px 5px 90px black inset;
+    border: 1px solid whitesmoke;
     padding: 20px;
     position: absolute;
 }
@@ -34,13 +37,15 @@
 
 .kbc-answer-block {
     list-style: none;
-    background-repeat: no-repeat;
-    margin-left: -13%;
+    margin-left: -9%;
     cursor: pointer;
     margin-top:10px;
-    padding: 12px;
+    padding: 10px;
+    border-radius:50px 50px 50px 50px;
+    box-shadow: 3px 5px 14px black inset;
     color: white;
     font-size: 14px;
+    border: 2px solid #B8ADDE;
     position: relative;
 }
 
@@ -54,6 +59,7 @@
 }
 
 .showMessages{
+    border: 2px solid white;
     background: rgba(68, 41, 158, 0.8);
     margin: 35%;
     width: 50%;

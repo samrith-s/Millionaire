@@ -24,19 +24,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="millionaire.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="millionaire.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/millionaire.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="30" selection-start="1443" selection-end="1443" vertical-scroll-proportion="0.0" vertical-offset="268" max-vertical-offset="3855">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="quiz.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/quiz/quiz.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="14" selection-start="1967" selection-end="1967" vertical-scroll-proportion="0.0" vertical-offset="825" max-vertical-offset="1590">
+            <state line="110" column="66" selection-start="3676" selection-end="3676" vertical-scroll-proportion="0.7336956" vertical-offset="1110" max-vertical-offset="5430">
               <folding />
             </state>
           </provider>
@@ -45,8 +36,10 @@
       <file leaf-file-name="millionaire-config.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/millionaire-config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="60" selection-start="2760" selection-end="2760" vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="1965">
-              <folding />
+            <state line="4" column="67" selection-start="139" selection-end="139" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1260">
+              <folding>
+                <element signature="e#323#2784#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,7 +47,16 @@
       <file leaf-file-name="quiz.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/quiz/quiz.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="1" selection-start="745" selection-end="745" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1035">
+            <state line="36" column="32" selection-start="505" selection-end="505" vertical-scroll-proportion="0.0" vertical-offset="286" max-vertical-offset="1050">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="25" selection-start="563" selection-end="563" vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="540">
               <folding />
             </state>
           </provider>
@@ -63,16 +65,16 @@
       <file leaf-file-name="question-bank.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/quiz/question-bank.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="198" column="22" selection-start="4126" selection-end="4126" vertical-scroll-proportion="0.0" vertical-offset="2715" max-vertical-offset="3435">
+            <state line="16" column="24" selection-start="365" selection-end="365" vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="3435">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="millionaire.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="millionaire.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/millionaire.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="17" selection-start="1582" selection-end="1582" vertical-scroll-proportion="0.8541667" vertical-offset="795" max-vertical-offset="3690">
+            <state line="217" column="26" selection-start="3170" selection-end="3170" vertical-scroll-proportion="0.0" vertical-offset="2596" max-vertical-offset="3390">
               <folding />
             </state>
           </provider>
@@ -89,12 +91,13 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/standardLoad/ptotemy-game-adaptor.js" />
+        <option value="$PROJECT_DIR$/modules/quiz/quiz.js" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/millionaire-config.js" />
         <option value="$PROJECT_DIR$/modules/quiz/quiz.css" />
-        <option value="$PROJECT_DIR$/modules/quiz/quiz.js" />
+        <option value="$PROJECT_DIR$/millionaire.css" />
         <option value="$PROJECT_DIR$/modules/quiz/question-bank.js" />
         <option value="$PROJECT_DIR$/millionaire.js" />
-        <option value="$PROJECT_DIR$/millionaire.css" />
       </list>
     </option>
   </component>
@@ -102,10 +105,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1600" />
-    <option name="y" value="24" />
-    <option name="width" value="1600" />
-    <option name="height" value="876" />
+    <option name="x" value="-1601" />
+    <option name="y" value="-4" />
+    <option name="width" value="1602" />
+    <option name="height" value="905" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -161,11 +164,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="standardLoad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="millionaire" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Millionaire" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="quiz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="millionaire" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Millionaire" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -198,15 +229,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1600" y="24" width="1600" height="876" extended-state="0" />
+    <frame x="-1601" y="-4" width="1602" height="905" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977304" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26353094" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26319176" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -214,7 +246,6 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -258,7 +289,9 @@
     <entry file="file://$PROJECT_DIR$/millionaire-config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="16" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1965">
-          <folding />
+          <folding>
+            <element signature="e#323#2784#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -300,7 +333,9 @@
     <entry file="file://$PROJECT_DIR$/millionaire-config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1875">
-          <folding />
+          <folding>
+            <element signature="e#323#2784#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -342,7 +377,9 @@
     <entry file="file://$PROJECT_DIR$/millionaire-config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="e#323#2784#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -384,7 +421,9 @@
     <entry file="file://$PROJECT_DIR$/millionaire-config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="e#323#2784#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -411,49 +450,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/standardLoad/ptotemy-game-adaptor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="1" selection-start="4394" selection-end="4394" vertical-scroll-proportion="0.5710345" vertical-offset="1491" max-vertical-offset="10695">
+        <state line="283" column="4" selection-start="8926" selection-end="8926" vertical-scroll-proportion="0.33333334" vertical-offset="4005" max-vertical-offset="10695">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/quiz/quiz.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="14" selection-start="1967" selection-end="1967" vertical-scroll-proportion="0.0" vertical-offset="825" max-vertical-offset="1590">
+        <state line="57" column="21" selection-start="1750" selection-end="1750" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1620">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/millionaire-config.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="60" selection-start="2760" selection-end="2760" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1965">
+        <state line="23" column="25" selection-start="563" selection-end="563" vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="540">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/quiz/quiz.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="1" selection-start="745" selection-end="745" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="1035">
+        <state line="36" column="32" selection-start="505" selection-end="505" vertical-scroll-proportion="0.0" vertical-offset="286" max-vertical-offset="1050">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/millionaire-config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="67" selection-start="139" selection-end="139" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1260">
+          <folding>
+            <element signature="e#323#2784#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/millionaire.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="217" column="26" selection-start="3170" selection-end="3170" vertical-scroll-proportion="0.0" vertical-offset="2596" max-vertical-offset="3390">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/quiz/question-bank.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="198" column="22" selection-start="4126" selection-end="4126" vertical-scroll-proportion="0.0" vertical-offset="2715" max-vertical-offset="3435">
+        <state line="16" column="24" selection-start="365" selection-end="365" vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="3435">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/millionaire.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="30" selection-start="1443" selection-end="1443" vertical-scroll-proportion="0.0" vertical-offset="268" max-vertical-offset="3855">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/millionaire.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="17" selection-start="1582" selection-end="1582" vertical-scroll-proportion="0.8541667" vertical-offset="795" max-vertical-offset="3690">
+        <state line="110" column="66" selection-start="3676" selection-end="3676" vertical-scroll-proportion="0.7336956" vertical-offset="1110" max-vertical-offset="5430">
           <folding />
         </state>
       </provider>

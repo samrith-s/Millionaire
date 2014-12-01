@@ -16,7 +16,7 @@ questionbank.questions = [
         optccorrect: "false",
         optcpoints: "0",
 
-        optd: "Banglore",
+        optd: "Bengaluru",
         optdcorrect: "false",
         optdpoints: "0"
     },
@@ -36,7 +36,7 @@ questionbank.questions = [
         optccorrect: "false",
         optcpoints: "0",
 
-        optd: "Banglore",
+        optd: "Bengaluru",
         optdcorrect: "false",
         optdpoints: "0"
     },
@@ -84,7 +84,7 @@ questionbank.questions = [
         statement: "Where is Charminar located?",
         weight: 1,
 
-        opta: "Hydrabad",
+        opta: "Hyderabad",
         optacorrect: "true",
         optapoints: "10",
 
@@ -132,7 +132,7 @@ questionbank.questions = [
         optbcorrect: "false",
         optbpoints: "0",
 
-        optc: "Gujrat",
+        optc: "Gujarat",
         optccorrect: "false",
         optcpoints: "0",
 
@@ -148,7 +148,7 @@ questionbank.questions = [
         optacorrect: "true",
         optapoints: "10",
 
-        optb: "Jawaharlal Nehru?",
+        optb: "Jawaharlal Nehru",
         optbcorrect: "false",
         optbpoints: "0",
 
@@ -176,7 +176,7 @@ questionbank.questions = [
         optccorrect: "false",
         optcpoints: "0",
 
-        optd: "Deccan Plataue",
+        optd: "Deccan Plateau",
         optdcorrect: "false",
         optdpoints: "0"
     },
@@ -212,7 +212,7 @@ questionbank.questions = [
         optbcorrect: "false",
         optbpoints: "0",
 
-        optc: "Sarajni Naidu",
+        optc: "Sarojini Naidu",
         optccorrect: "true",
         optcpoints: "10",
 
