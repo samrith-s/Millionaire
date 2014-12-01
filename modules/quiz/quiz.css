@@ -8,58 +8,38 @@
 
 }
 
-#kbc-question-back{
-    /*background: none repeat scroll 0 0 rgba(68, 41, 158, 0.8);*/
+#kbc-question{
     border-radius:0px 50px 0px 50px;
     height: 35%;
-    left: 10%;
-    top: 10%;
-    width: 93%;
+    width: 89%;
     color: white;
     box-shadow: 3px 5px 90px black inset;
     border: 2px solid #B8ADDE;
-}
-#kbc-question-back img{
-    width: 100%;
-    height: 100%;
-}
-
-#kbc-question{
-    height: 30%;
-    padding: 20px 0 20px 20px;
-   top: 0;
-    width: 93%;
-    color: white;
+    padding: 20px;
     position: absolute;
 }
 
 #options-area {
-    left: 10%;
+    position: relative;
+    left: 2%;
+    top: 45%;
     width: 96%;
     height: 50%;
 
 }
 
-.kbc-answer-back {
+.kbc-answer-block {
     list-style: none;
     margin-left: -9%;
     cursor: pointer;
-    background: rgba(68, 41, 158, 0.8);
     margin-top:10px;
     padding: 10px;
     border-radius:50px 50px 50px 50px;
-    /*-webkit-transform: skew(-20deg);*/
-    /*-moz-transform: skew(-20deg);*/
-    /*-o-transform: skew(-20deg);*/
     box-shadow: 3px 5px 14px black inset;
     color: white;
     font-size: 14px;
     border: 2px solid #B8ADDE;
     position: relative;
-}
-.kbc-answer-back:hover{
-    background: rgba(255, 136, 0, 1) ;
-    color: black;
 }
 
 .unselectable {

@@ -8,13 +8,15 @@ var pollSelected;
 var halfSelected;
 var changeSelected;
 var flag;
+var pointsEarned;
 
 $(function () {
+    initTheme();
     initGame();
     playGame();
 });
 
-function initGame() {
+function initTheme() {
     loadConfig(kbc_back);
     loadConfig(ladder);
     loadConfig(lifelines);
@@ -22,27 +24,73 @@ function initGame() {
     loadConfig(fifty_fifty);
     initQuiz();
     loadConfig(player);
+    runGlobalObservers();
     player.setState('1');
     player.location(ladder.kbc_ladder01_text);
     var lives = new Currency("lives");
     player.createWallet(lives, 0, 1, 1);
+}
+
+function runGlobalObservers() {
+    $("#kbc_lifeline1_img").mouseover(function() {
+        $("#lifelines").append($('<div />', {id: "life1", class:"lifeline-text", text: "Audience Poll"}))
+        $("#life1").css({"background": "url(img/kbc-lifeline-texture.jpg)", opacity: "0.9"});
+    });
+
+    $("#kbc_lifeline2_img").mouseover(function() {
+        $("#lifelines").append($('<div />', {id: "life2", class:"lifeline-text", text: "50-50"}))
+        $("#life2").css({"background": "url(img/kbc-lifeline-texture.jpg)", opacity: "0.9"});
+    });
+
+    $("#kbc_lifeline3_img").mouseover(function() {
+        $("#lifelines").append($('<div />', {id: "life3", class:"lifeline-text", text: "Change Question"}))
+        $("#life3").css({"background": "url(img/kbc-lifeline-texture.jpg)", opacity: "0.9"});
+    });
+
+    $("#lifelines .location").mouseout(function() {
+        $(".lifeline-text").remove();
+    });
+}
+
+function initGame() {
     pollSelected = false;
     halfSelected = false;
     changeSelected = false;
     flag = 0;
-    Question.all = shuffle(Question.all);
+    pointsEarned = 0;
+    quizShuffle();
 
+}
+
+function quizShuffle() {
+    for(var i in Question.all)
+        Question.all[i].options = shuffle(Question.all[i].options);
+
+    Question.all = shuffle(Question.all);
+}
+
+function answerHover() {
+    $(".kbc-answer-block").mouseover(function() {
+        $("#"+$(this).attr("id")).css({"background": "rgba(255, 136, 0, 0.85)"});
+    });
+    $(".kbc-answer-block").mouseout(function() {
+        $("#"+$(this).attr("id")).css({"background": "url(img/kbc-answer-texture.jpg)", opacity: "0.85"});
+    });
 }
 
 function playGame() {
     question = Question.getQuestion(1, flag);
     $('#quiz').fadeIn(function () {
-        Question.showQuizPanel(quiz, question)
+        Question.showQuizPanel(quiz, question);
+        $("#kbc-question").css({"background": "url(img/kbc-question-texture.jpg)", opacity: "0.85"});
+        $(".kbc-answer-block").css({"background": "url(img/kbc-answer-texture.jpg)", opacity: "0.85"});
+        answerHover();
     });
     $(question).unbind('answered').on('answered', function (e, data) {
         flag++;
         if (data.correct == "true") {
-            quiz.setState("correct");
+            $("#"+data.id).css({"background": "rgba(0, 130, 0, 0.85)"});
+            pointsEarned += parseInt(data.points);
             $("#quiz").fadeOut(function () {
                 quiz.setState('default');
                 ladder[player.location().name].setState('complete');
@@ -50,7 +98,6 @@ function playGame() {
                     victory();
                 else {
                     player.location(ladder.nextLocation(player.location()));
-                    //$("#"+player.location().name).append(player);
                     playGame();
                 }
 
@@ -71,7 +118,7 @@ function playGame() {
     $("#kbc_lifeline1_img").unbind('click').on('click', function () {
         if(pollSelected == false) {
             pollSelected = true;
-            $("#kbc_lifeline_text").html('<p>If the contestant uses this lifeline, audience members use touch pads to designate what they believe the correct answer to be. After the audience have chosen their choices, the results are displayed to the contestant in percentages in bar-graph format.</p>').fadeIn();
+            $("#kbc_lifeline_text").html('<p>If you use this lifeline, audience members will use touch pads to designate what they believe the correct answer to be. After the audience have chosen their choices, the results are displayed to the contestant in percentages in bar-graph format.</p>').fadeIn();
             $("#kbc_lifeline_text").append(   '<p><span id="messageOk">Use</span>' +
                 '<span id="messageCancel">Cancel</span></p>');
             $("#quiz").fadeOut();
@@ -104,7 +151,7 @@ function playGame() {
         if(halfSelected == false) {
             halfSelected = true;
             //$("#half").addClass('lifeline-selected');
-            $("#kbc_lifeline_text").text("If the contestant uses this lifeline, the host will ask the computer to randomly remove and eliminate two of the 'wrong' answers. This will leave one right answer and one wrong answer, resulting in a situation of eliminating 50% of the choices as well as having a 50% chance of getting the answer right if the contestant is in a situation of making a guess.").show();
+            $("#kbc_lifeline_text").text("If you use this lifeline, the computer will randomly remove and eliminate two of the 'wrong' answers.").show();
             $("#kbc_lifeline_text").append(   '<p><span id="messageOk">Use</span>' +
                 '<span id="messageCancel">Cancel</span></p>');
             $("#quiz").fadeOut();
@@ -125,7 +172,7 @@ function playGame() {
         if(changeSelected == false) {
             changeSelected = true;
             //$("#change").addClass('lifeline-selected');
-            $("#kbc_lifeline_text").text("The computer replaced, at the contestant's request, one question with another of the same monetary value. Any lifelines used on the original question prior to the switching were not reinstated.").fadeIn();
+            $("#kbc_lifeline_text").text("If you use this lifeline, the computer will replace this question with another of the same monetary value.").fadeIn();
             $("#kbc_lifeline_text").append(   '<p><span id="messageOk">Use</span>' +
                 '<span id="messageCancel">Cancel</span></p>');
             $("#quiz").hide();
@@ -189,11 +236,14 @@ function half() {
 function victory() {
     $("#message-box").fadeIn();
     $("#message").html("<span>You Win!</span>");
+    console.log(pointsEarned);
 }
 
 function defeat() {
     $("#message-box").fadeIn();
     $("#message").html("<span>You Lose!</span>");
+    console.log(pointsEarned);
+
 }
 
 

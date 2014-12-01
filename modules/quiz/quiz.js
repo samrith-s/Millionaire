@@ -3,9 +3,9 @@ var quiz;
 config.quiz = {
     type: "environment",
     states: [
-        {name: "default", representation: "<img id='kbc-question-back' src='img/background.jpg'/><div id='kbc-question'></div><div id='options-area'></div>"},
-        {name: "correct", representation: "<div id='msgWindow'></div>"},
-        {name: "wrong", representation: "<img src='img/questionwrong.png'/>"}
+        {name: "default", representation: "<div id='kbc-question'></div><div id='options-area'></div>"}
+//        {name: "correct", representation: "<div id='msgWindow'></div>"},
+//        {name: "wrong", representation: "<img src='img/questionwrong.png'/>"}
     ]
 };
 
@@ -61,11 +61,11 @@ var Question = Class({
         Question.all.push(this);
         log.add('Question: ' + name + ' created')
     },
-    checkAnswer: function (option) {
+    checkAnswer: function (option, id) {
         var thisAnswer = $.grep(this.options, function (a) {
             return ( a == option );
         })[0];
-        return {correct: thisAnswer.correct, weight: this.weight, points: thisAnswer.points, help: this.help}
+        return {id: id, correct: thisAnswer.correct, weight: this.weight, points: thisAnswer.points, help: this.help}
     }
 });
 
@@ -89,11 +89,11 @@ Question.showQuizPanel = function (obj, question) {
     $('#kbc-question').html(question.name);
     $('#options-area').empty().append("<ul></ul>");
     for (var i in question.options) {
-        $('#options-area ul').append('<li class="kbc-answer-back" id="kbc-answer-back-' + i + '">' + question.options[i].name + '</li>');
+        $('#options-area ul').append('<li class="kbc-answer-block" id="kbc-answer-block-' + i + '">' + question.options[i].name + '</li>');
     }
-    $('.kbc-answer-back').unbind('click').on('click', function () {
+    $('.kbc-answer-block').unbind('click').on('click', function () {
         $this = $(this);
-        $(question).trigger("answered", [question.checkAnswer(question.options[parseInt($this.attr("id").split("kbc-answer-back-")[1])])]);
+        $(question).trigger("answered", [question.checkAnswer(question.options[parseInt($this.attr("id").split("kbc-answer-block-")[1])], $this.attr("id"))]);
     });
 };
 

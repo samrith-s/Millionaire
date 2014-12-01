@@ -6,7 +6,7 @@ questionbank.questions = [
 
         opta: "Delhi",
         optacorrect: "true",
-        optapoints: "0",
+        optapoints: "10",
 
         optb: "Mumbai",
         optbcorrect: "false",
@@ -30,7 +30,7 @@ questionbank.questions = [
 
         optb: "Mumbai",
         optbcorrect: "true",
-        optbpoints: "0",
+        optbpoints: "10",
 
         optc: "Pune",
         optccorrect: "false",
@@ -46,7 +46,7 @@ questionbank.questions = [
 
         opta: "Delhi",
         optacorrect: "true",
-        optapoints: "0",
+        optapoints: "10",
 
         optb: "Agra",
         optbcorrect: "false",
@@ -66,7 +66,7 @@ questionbank.questions = [
 
         opta: "East of India",
         optacorrect: "true",
-        optapoints: "0",
+        optapoints: "10",
 
         optb: "West of India",
         optbcorrect: "false",
@@ -86,7 +86,7 @@ questionbank.questions = [
 
         opta: "Hydrabad",
         optacorrect: "true",
-        optapoints: "0",
+        optapoints: "10",
 
         optb: "Chennai",
         optbcorrect: "false",
@@ -114,7 +114,7 @@ questionbank.questions = [
 
         optc: "Mumbai",
         optccorrect: "true",
-        optcpoints: "0",
+        optcpoints: "10",
 
         optd: "Goa",
         optdcorrect: "false",
@@ -126,7 +126,7 @@ questionbank.questions = [
 
         opta: "West Bengal",
         optacorrect: "true",
-        optapoints: "0",
+        optapoints: "10",
 
         optb: "Tamil Nadu",
         optbcorrect: "false",
@@ -146,7 +146,7 @@ questionbank.questions = [
 
         opta: "Mahatma Gandhi",
         optacorrect: "true",
-        optapoints: "0",
+        optapoints: "10",
 
         optb: "Jawaharlal Nehru?",
         optbcorrect: "false",
@@ -170,7 +170,7 @@ questionbank.questions = [
 
         optb: "Mount Kanchendzonga",
         optbcorrect: "true",
-        optbpoints: "0",
+        optbpoints: "10",
 
         optc: "Gilbert Hill",
         optccorrect: "false",
@@ -198,7 +198,7 @@ questionbank.questions = [
 
         optd: "Fenny",
         optdcorrect: "true",
-        optdpoints: "0"
+        optdpoints: "10"
     },
     {
         statement: "Who was called the Nightingale of India?",
@@ -214,7 +214,7 @@ questionbank.questions = [
 
         optc: "Sarajni Naidu",
         optccorrect: "true",
-        optcpoints: "0",
+        optcpoints: "10",
 
         optd: "Lady GaGa",
         optdcorrect: "false",

@@ -17,51 +17,51 @@ config.ladder = {
     ],
     locations: [
         {name: "kbc_ladder10_text", sequence: 9, states: [
-            {name: "complete", representation: "<span class='completed'>1000000</span>"},
-            {name: "default", representation: "<span>1000000</span>"}
+            {name: "complete", representation: "<span class='completed'>1,000,000 $</span>"},
+            {name: "default", representation: "<span>1,000,000 $</span>"}
 
         ]},
         {name: "kbc_ladder09_text", sequence: 8, states: [
-            {name: "complete", representation: "<span class='completed'>500000</span>"},
-            {name: "default", representation: "<span>500000</span>"}
+            {name: "complete", representation: "<span class='completed'>500,000 $</span>"},
+            {name: "default", representation: "<span>500,000 $</span>"}
         ]},
         {name: "kbc_ladder08_text", sequence: 7, states: [
-            {name: "complete", representation: "<span class='completed'>200000</span>"},
-            {name: "default", representation: "<span>200000</span>"}
+            {name: "complete", representation: "<span class='completed'>200,000 $</span>"},
+            {name: "default", representation: "<span>200,000 $</span>"}
         ]},
         {name: "kbc_ladder07_text", sequence: 6, states: [
-            {name: "complete", representation: "<span class='completed'>100000</span>"},
-            {name: "default", representation: "<span>100000</span>"}
+            {name: "complete", representation: "<span class='completed'>100,000 $</span>"},
+            {name: "default", representation: "<span>100,000 $</span>"}
 
         ]},
         {name: "kbc_ladder06_text", sequence: 5, states: [
-            {name: "complete", representation: "<span class='completed'>50000</span>"},
-            {name: "default", representation: "<span>50000</span>"}
+            {name: "complete", representation: "<span class='completed'>50,000 $</span>"},
+            {name: "default", representation: "<span>50,000 $</span>"}
 
         ]},
         {name: "kbc_ladder05_text", sequence: 4, states: [
-            {name: "complete", representation: "<span class='completed'>20000</span>"},
-            {name: "default", representation: "<span>20000</span>"}
+            {name: "complete", representation: "<span class='completed'>20,000 $</span>"},
+            {name: "default", representation: "<span>20,000 $</span>"}
 
         ]},
         {name: "kbc_ladder04_text", sequence: 3, states: [
-            {name: "complete", representation: "<span class='completed'>10000</span>"},
-            {name: "default", representation: "<span>10000</span>"}
+            {name: "complete", representation: "<span class='completed'>10,000 $</span>"},
+            {name: "default", representation: "<span>10,000 $</span>"}
 
         ]},
         {name: "kbc_ladder03_text", sequence: 2, states: [
-            {name: "complete", representation: "<span class='completed'>5000</span>"},
-            {name: "default", representation: "<span>5000</span>"}
+            {name: "complete", representation: "<span class='completed'>5,000 $</span>"},
+            {name: "default", representation: "<span>5,000 $</span>"}
 
         ]},
         {name: "kbc_ladder02_text", sequence: 1, states: [
-            {name: "complete", representation: "<span class='completed'>2000</span>"},
-            {name: "default", representation: "<span>2000</span>"}
+            {name: "complete", representation: "<span class='completed'>2,000 $</span>"},
+            {name: "default", representation: "<span>2,000 $</span>"}
 
         ]},
         {name: "kbc_ladder01_text", sequence: 0, states: [
-            {name: "complete", representation: "<span class='completed'>1000</span>"},
-            {name: "default", representation: "<span>1000</span>"}
+            {name: "complete", representation: "<span class='completed'>1,000 $</span>"},
+            {name: "default", representation: "<span>1,000 $</span>"}
 
         ]}
     ]

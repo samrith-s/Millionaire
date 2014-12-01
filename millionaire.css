@@ -1,6 +1,7 @@
 html, body {
     padding: 0;
     margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 #ptotemy-game {
@@ -42,15 +43,15 @@ img {
     background: rgba(26, 188, 167, 0.1);
     width: 30%;
     left: 69%;
-    height: 80%;
-    top: 4%;
+    height: 74%;
+    top: 3%;
     border: 2px solid #b8adde;
 }
 
 #ladder .location {
     position: relative !important;
     /*background: rgba(240, 228, 55, 1);*/
-    margin-top: 10px;
+    margin-top: 7px;
     margin-left: 8%;
     padding: 2%;
     height: 20px;
@@ -63,7 +64,7 @@ img {
 
 #lifelines {
     /*background: rgba(26, 188, 167, 0.1);*/
-    top: 85%;
+    top: 79%;
     left: 69%;
     width: 30%;
     height: 12%;
@@ -83,6 +84,27 @@ img {
     /*color: white;*/
     /*border-radius: 50px;*/
 
+}
+
+.lifeline-text {
+    border-radius: 5px;
+    border: 1px solid whitesmoke;
+    padding: 5px;
+
+    position: absolute;
+    color: white;
+}
+
+#life1 {
+    left: 0%;
+}
+
+#life2 {
+    left: 37%;
+}
+
+#life3 {
+    left: 28%;
 }
 
 #kbc_lifeline_text{
