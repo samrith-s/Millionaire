@@ -1,5 +1,5 @@
 var config = {};
-config.kbc_back = {
+config.base = {
     type: "environment",
     states: [
         {name: "default", representation: "<img src='img/background1.jpg'/>"}
@@ -73,17 +73,17 @@ config.lifelines = {
 
     ],
     locations: [
-        {name: "kbc_lifeline1_img", sequence: 0, states: [
-            {name: "complete", representation: "<img src='img/poll-disabled.png'/>"},
-            {name: "default", representation: "<img src='img/poll.png'/>"}
+        {name: "kbc-lifeline1-img", sequence: 0, states: [
+            {name: "complete", representation: "<img class='complete' src='img/poll-disabled.png'/>"},
+            {name: "default", representation: "<img class='default' src='img/poll.png'/>"}
         ]},
-        {name: "kbc_lifeline2_img", sequence: 0, states: [
-            {name: "complete", representation: "<img src='img/50-50-disabled.png'/>"},
-            {name: "default", representation: "<img src='img/50-50.png'/>"}
+        {name: "kbc-lifeline2-img", sequence: 0, states: [
+            {name: "complete", representation: "<img class='complete' src='img/50-50-disabled.png'/>"},
+            {name: "default", representation: "<img class='default' src='img/50-50.png'/>"}
         ]},
-        {name: "kbc_lifeline3_img", sequence: 0, states: [
-            {name: "complete", representation: "<img src='img/change-disabled.png'/>"},
-            {name: "default", representation: "<img src='img/change.png'/>"}
+        {name: "kbc-lifeline3-img", sequence: 0, states: [
+            {name: "complete", representation: "<img class='complete' src='img/change-disabled.png'/>"},
+            {name: "default", representation: "<img class='default' src='img/change.png'/>"}
         ]}
     ]
 };
@@ -96,17 +96,17 @@ config.player = {
     ]
 };
 
-config.kbc_lifeline_text = {
+config.kbc_lifeline = {
     type:"environment",
     states:[
         {name:"kbc_lifeline_text",representation:""}
     ]
 };
 
-config.fifty_fifty = {
+config.poll = {
     type:"environment",
     states:[
-        {name:"fifty-fifty",representation:""}
+        {name:"poll",representation:""}
     ],
     locations: [
         {name: "A", sequence: 0, states: [
