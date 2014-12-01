@@ -18,22 +18,22 @@ $(function () {
 
 function initTheme() {
     loadConfig(base);
-    $("#message").css({"background": "url(img/kbc-endgame-texture.png)", opacity: "0.9"});
+    $("#message").css({"background": "url(img/kbc-endgame-texture.png)"});
 
     loadConfig(ladder);
-    $("#ladder").css({"background": "url(img/kbc-ladder-texture.png)", opacity: "0.9"});
+    $("#ladder").css({"background": "url(img/kbc-ladder-texture.png)"});
 
     loadConfig(lifelines);
     $("#lifelines .location").addClass("lifeline");
     $("#kbc-lifeline-panel").removeClass("lifeline");
-    $("#kbc-lifeline-panel").css({"background": "url(img/kbc-lifeline-panel-texture.png)", opacity: "0.9"})
+    $("#kbc-lifeline-panel").css({"background": "url(img/kbc-lifeline-panel-texture.png)"})
 
     loadConfig(kbc_lifeline);
     $("#kbc_lifeline").attr("id", "kbc-lifeline");
-    $("#kbc-lifeline").css({"background": "url(img/kbc-lifeline-panel-texture.png)", opacity: "0.9"});
+    $("#kbc-lifeline").css({"background": "url(img/kbc-lifeline-panel-texture.png)"});
 
     loadConfig(poll);
-    $("#poll").css({"background": "url(img/kbc-lifeline-panel-texture.png)", opacity: "0.9"});
+    $("#poll").css({"background": "url(img/kbc-lifeline-panel-texture.png)"});
     initQuiz();
 
     loadConfig(player);
@@ -143,6 +143,7 @@ function playGame() {
 
 
             $("#messageOk").unbind('click').on('click', function () {
+                $("#poll").css({"background": "url(img/kbc-lifeline-panel3-texture.png)"});
                 $("#poll").fadeIn();
                 $("#poll").append('<div id="messageOk2">OK</div>');
                 pollSelected = true;
@@ -261,10 +262,13 @@ function setLifeline(lifeline) {
                 top: "68%",
                 height: "29%"
             });
-            $("#kbc-lifeline-panel").css({
-                height: "52%",
-                background: "url(img/kbc-lifeline-panel-texture.png)"
-            });
+            setTimeout(function() {
+                $("#kbc-lifeline-panel").css({
+                    height: "52%",
+                    background: "url(img/kbc-lifeline-panel-texture.png)"
+                });
+            }, 400)
+
             $("#kbc-lifeline-1 span").css({
                 opacity: 1
             });
