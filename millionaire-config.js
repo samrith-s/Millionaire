@@ -1,5 +1,5 @@
 var config = {};
-config.base = {
+config.kbc_back = {
     type: "environment",
     states: [
         {name: "default", representation: "<img src='img/background1.jpg'/>"}
@@ -16,50 +16,50 @@ config.ladder = {
         {name: "default", representation: ""}
     ],
     locations: [
-        {name: "rung9", sequence: 9, states: [
+        {name: "kbc_ladder10_text", sequence: 9, states: [
             {name: "complete", representation: "<span class='completed'>1000000</span>"},
             {name: "default", representation: "<span>1000000</span>"}
 
         ]},
-        {name: "rung8", sequence: 8, states: [
+        {name: "kbc_ladder09_text", sequence: 8, states: [
             {name: "complete", representation: "<span class='completed'>500000</span>"},
             {name: "default", representation: "<span>500000</span>"}
         ]},
-        {name: "rung7", sequence: 7, states: [
+        {name: "kbc_ladder08_text", sequence: 7, states: [
             {name: "complete", representation: "<span class='completed'>200000</span>"},
             {name: "default", representation: "<span>200000</span>"}
         ]},
-        {name: "rung6", sequence: 6, states: [
+        {name: "kbc_ladder07_text", sequence: 6, states: [
             {name: "complete", representation: "<span class='completed'>100000</span>"},
             {name: "default", representation: "<span>100000</span>"}
 
         ]},
-        {name: "rung5", sequence: 5, states: [
+        {name: "kbc_ladder06_text", sequence: 5, states: [
             {name: "complete", representation: "<span class='completed'>50000</span>"},
             {name: "default", representation: "<span>50000</span>"}
 
         ]},
-        {name: "rung4", sequence: 4, states: [
+        {name: "kbc_ladder05_text", sequence: 4, states: [
             {name: "complete", representation: "<span class='completed'>20000</span>"},
             {name: "default", representation: "<span>20000</span>"}
 
         ]},
-        {name: "rung3", sequence: 3, states: [
+        {name: "kbc_ladder04_text", sequence: 3, states: [
             {name: "complete", representation: "<span class='completed'>10000</span>"},
             {name: "default", representation: "<span>10000</span>"}
 
         ]},
-        {name: "rung2", sequence: 2, states: [
+        {name: "kbc_ladder03_text", sequence: 2, states: [
             {name: "complete", representation: "<span class='completed'>5000</span>"},
             {name: "default", representation: "<span>5000</span>"}
 
         ]},
-        {name: "rung1", sequence: 1, states: [
+        {name: "kbc_ladder02_text", sequence: 1, states: [
             {name: "complete", representation: "<span class='completed'>2000</span>"},
             {name: "default", representation: "<span>2000</span>"}
 
         ]},
-        {name: "rung0", sequence: 0, states: [
+        {name: "kbc_ladder01_text", sequence: 0, states: [
             {name: "complete", representation: "<span class='completed'>1000</span>"},
             {name: "default", representation: "<span>1000</span>"}
 
@@ -69,19 +69,19 @@ config.ladder = {
 config.lifelines = {
     type: "environment",
     states: [
-        {name: "default", representation: ""},
+        {name: "default", representation: ""}
 
     ],
     locations: [
-        {name: "poll", sequence: 0, states: [
+        {name: "kbc_lifeline1_img", sequence: 0, states: [
             {name: "complete", representation: "<img src='img/poll-disabled.png'/>"},
             {name: "default", representation: "<img src='img/poll.png'/>"}
         ]},
-        {name: "half", sequence: 0, states: [
+        {name: "kbc_lifeline2_img", sequence: 0, states: [
             {name: "complete", representation: "<img src='img/50-50-disabled.png'/>"},
             {name: "default", representation: "<img src='img/50-50.png'/>"}
         ]},
-        {name: "change", sequence: 0, states: [
+        {name: "kbc_lifeline3_img", sequence: 0, states: [
             {name: "complete", representation: "<img src='img/change-disabled.png'/>"},
             {name: "default", representation: "<img src='img/change.png'/>"}
         ]}
@@ -96,10 +96,10 @@ config.player = {
     ]
 };
 
-config.messageBox = {
+config.kbc_lifeline_text = {
     type:"environment",
     states:[
-        {name:"messageBox",representation:""}
+        {name:"kbc_lifeline_text",representation:""}
     ]
 };
 

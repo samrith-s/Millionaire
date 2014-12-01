@@ -3,7 +3,7 @@ var quiz;
 config.quiz = {
     type: "environment",
     states: [
-        {name: "default", representation: "<div id='statement-area'></div><div id='options-area'></div>"},
+        {name: "default", representation: "<img id='kbc-question-back' src='img/background.jpg'/><div id='kbc-question'></div><div id='options-area'></div>"},
         {name: "correct", representation: "<div id='msgWindow'></div>"},
         {name: "wrong", representation: "<img src='img/questionwrong.png'/>"}
     ]
@@ -86,14 +86,14 @@ Question.getQuestion = function(weight, flag) {
 }
 
 Question.showQuizPanel = function (obj, question) {
-    $('#statement-area').html(question.name);
+    $('#kbc-question').html(question.name);
     $('#options-area').empty().append("<ul></ul>");
     for (var i in question.options) {
-        $('#options-area ul').append('<li class="option-block" id="option-block-' + i + '">' + question.options[i].name + '</li>');
+        $('#options-area ul').append('<li class="kbc-answer-back" id="kbc-answer-back-' + i + '">' + question.options[i].name + '</li>');
     }
-    $('.option-block').unbind('click').on('click', function () {
+    $('.kbc-answer-back').unbind('click').on('click', function () {
         $this = $(this);
-        $(question).trigger("answered", [question.checkAnswer(question.options[parseInt($this.attr("id").split("option-block-")[1])])]);
+        $(question).trigger("answered", [question.checkAnswer(question.options[parseInt($this.attr("id").split("kbc-answer-back-")[1])])]);
     });
 };
 

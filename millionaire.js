@@ -1,7 +1,7 @@
-var base = new Environment("base");
+var kbc_back = new Environment("kbc_back");
 var ladder = new Environment("ladder");
 var lifelines = new Environment("lifelines");
-var messageBox = new Environment("messageBox");
+var kbc_lifeline_text = new Environment("kbc_lifeline_text");
 var fifty_fifty = new Environment("fifty_fifty");
 var player = new Entity("player");
 var pollSelected;
@@ -15,15 +15,15 @@ $(function () {
 });
 
 function initGame() {
-    loadConfig(base);
+    loadConfig(kbc_back);
     loadConfig(ladder);
     loadConfig(lifelines);
-    loadConfig(messageBox);
+    loadConfig(kbc_lifeline_text);
     loadConfig(fifty_fifty);
     initQuiz();
     loadConfig(player);
     player.setState('1');
-    player.location(ladder.rung0);
+    player.location(ladder.kbc_ladder01_text);
     var lives = new Currency("lives");
     player.createWallet(lives, 0, 1, 1);
     pollSelected = false;
@@ -46,7 +46,7 @@ function playGame() {
             $("#quiz").fadeOut(function () {
                 quiz.setState('default');
                 ladder[player.location().name].setState('complete');
-                if (player.location().name == 'rung9')
+                if (player.location().name == 'kbc_ladder10_text')
                     victory();
                 else {
                     player.location(ladder.nextLocation(player.location()));
@@ -68,16 +68,16 @@ function playGame() {
     //---------------lifeline function----------------------
 
 
-    $("#poll").unbind('click').on('click', function () {
+    $("#kbc_lifeline1_img").unbind('click').on('click', function () {
         if(pollSelected == false) {
             pollSelected = true;
-            $("#messageBox").html('<p>If the contestant uses this lifeline, audience members use touch pads to designate what they believe the correct answer to be. After the audience have chosen their choices, the results are displayed to the contestant in percentages in bar-graph format.</p>').fadeIn();
-            $("#messageBox").append(   '<p><span id="messageOk">Use</span>' +
+            $("#kbc_lifeline_text").html('<p>If the contestant uses this lifeline, audience members use touch pads to designate what they believe the correct answer to be. After the audience have chosen their choices, the results are displayed to the contestant in percentages in bar-graph format.</p>').fadeIn();
+            $("#kbc_lifeline_text").append(   '<p><span id="messageOk">Use</span>' +
                 '<span id="messageCancel">Cancel</span></p>');
             $("#quiz").fadeOut();
 
             $("#messageOk").unbind('click').on('click', function () {
-                $("#messageBox").fadeOut();
+                $("#kbc_lifeline_text").fadeOut();
                 $("#fifty_fifty").fadeIn();
                 $("#fifty_fifty").append('<div id="messageOk2">Ok</div>');
 
@@ -86,13 +86,13 @@ function playGame() {
                 $("#messageOk2").unbind('click').on('click', function () {
                     $("#fifty_fifty").fadeOut();
                     $("#quiz").fadeIn();
-                    lifelines.poll.setState("complete");
+                    lifelines.kbc_lifeline1_img.setState("complete");
                 });
 
             });
             $("#messageCancel").unbind('click').on('click', function (){
                 pollSelected = false;
-                $("#messageBox").fadeOut();
+                $("#kbc_lifeline_text").fadeOut();
                 $("#quiz").fadeIn();
             });
 
@@ -100,45 +100,45 @@ function playGame() {
     });
 
 
-    $("#half").unbind('click').on('click', function () {
+    $("#kbc_lifeline2_img").unbind('click').on('click', function () {
         if(halfSelected == false) {
             halfSelected = true;
             //$("#half").addClass('lifeline-selected');
-            $("#messageBox").text("If the contestant uses this lifeline, the host will ask the computer to randomly remove and eliminate two of the 'wrong' answers. This will leave one right answer and one wrong answer, resulting in a situation of eliminating 50% of the choices as well as having a 50% chance of getting the answer right if the contestant is in a situation of making a guess.").show();
-            $("#messageBox").append(   '<p><span id="messageOk">Use</span>' +
+            $("#kbc_lifeline_text").text("If the contestant uses this lifeline, the host will ask the computer to randomly remove and eliminate two of the 'wrong' answers. This will leave one right answer and one wrong answer, resulting in a situation of eliminating 50% of the choices as well as having a 50% chance of getting the answer right if the contestant is in a situation of making a guess.").show();
+            $("#kbc_lifeline_text").append(   '<p><span id="messageOk">Use</span>' +
                 '<span id="messageCancel">Cancel</span></p>');
             $("#quiz").fadeOut();
             $("#messageOk").unbind('click').on('click', function () {
-                $("#messageBox").fadeOut();
+                $("#kbc_lifeline_text").fadeOut();
                 half();
                 $("#quiz").fadeIn();
-                lifelines.half.setState("complete");
+                lifelines.kbc_lifeline2_img.setState("complete");
             });
             $("#messageCancel").unbind('click').on('click', function (){
                 halfSelected = false;
-                $("#messageBox").fadeOut();
+                $("#kbc_lifeline_text").fadeOut();
                 $("#quiz").fadeIn();
             });
         }
     });
-    $("#change").unbind('click').on('click', function () {
+    $("#kbc_lifeline3_img").unbind('click').on('click', function () {
         if(changeSelected == false) {
             changeSelected = true;
             //$("#change").addClass('lifeline-selected');
-            $("#messageBox").text("The computer replaced, at the contestant's request, one question with another of the same monetary value. Any lifelines used on the original question prior to the switching were not reinstated.").fadeIn();
-            $("#messageBox").append(   '<p><span id="messageOk">Use</span>' +
+            $("#kbc_lifeline_text").text("The computer replaced, at the contestant's request, one question with another of the same monetary value. Any lifelines used on the original question prior to the switching were not reinstated.").fadeIn();
+            $("#kbc_lifeline_text").append(   '<p><span id="messageOk">Use</span>' +
                 '<span id="messageCancel">Cancel</span></p>');
             $("#quiz").hide();
             $("#messageOk").unbind('click').on('click', function () {
-                $("#messageBox").fadeOut();
+                $("#kbc_lifeline_text").fadeOut();
                 flag++;
                 playGame();
-                lifelines.change.setState("complete");
+                lifelines.kbc_lifeline3_img.setState("complete");
             });
         }
         $("#messageCancel").unbind('click').on('click', function (){
             changeSelected = false;
-            $("#messageBox").fadeOut();
+            $("#kbc_lifeline_text").fadeOut();
             $("#quiz").fadeIn();
         });
     });
@@ -179,8 +179,8 @@ function half() {
 
         if((question.options[random1].correct == "false") && (question.options[random2].correct == "false")) {
             console.log(random1, random2);
-            $(".option-block").eq(random1).hide();
-            $(".option-block").eq(random2).hide();
+            $(".kbc-answer-back").eq(random1).hide();
+            $(".kbc-answer-back").eq(random2).hide();
             break;
         }
     }
