@@ -14,7 +14,7 @@ $(function () {
     initTheme();
     initGame();
     playGame();
-    parent.setGameAttempt(parent.currentIntegratedGame,parent.currentUid);
+//    parent.setGameAttempt(parent.currentIntegratedGame,parent.currentUid);
     window.ondragstart = function() {return false}
 });
 
@@ -109,14 +109,14 @@ function playGame() {
         Question.showQuizPanel(quiz, question);
         $("#kbc-question").css({"background": "url(" + getImg("kbc-question-back") + ")"});
         $(".kbc-answer-block").find('img').attr('src', getImg("kbc-answer-back"));
-        parent.setQuestionAttempt(question.id);
+//        parent.setQuestionAttempt(question.id);
 
         answerHover();
     });
     $(question).unbind('answered').on('answered', function (e, data) {
         flag++;
         if (data.correct == "true") {
-            parent.markQuestionAttemptCorrect();
+//            parent.markQuestionAttemptCorrect();
             $(data.$this).find('img').attr('src', getImg("kbc-answer-right-back"));
 
             pointsEarned += parseInt(data.points);
