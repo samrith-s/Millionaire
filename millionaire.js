@@ -15,6 +15,7 @@ $(function () {
     initGame();
     playGame();
     parent.setGameAttempt(parent.currentIntegratedGame,parent.currentUid);
+    window.ondragstart = function() {return false}
 });
 
 function initTheme() {
