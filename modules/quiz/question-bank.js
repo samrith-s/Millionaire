@@ -18,7 +18,9 @@ questionbank.questions = [
 
         optd: "Bengaluru",
         optdcorrect: "false",
-        optdpoints: "0"
+        optdpoints: "0",
+
+        slide_id:321
     },
     {
         statement: "Where is Gateway of India Located?",
@@ -38,7 +40,9 @@ questionbank.questions = [
 
         optd: "Bengaluru",
         optdcorrect: "false",
-        optdpoints: "0"
+        optdpoints: "0",
+
+        slide_id:321
     },
     {
         statement: "Where is India Gate located?",
@@ -58,7 +62,9 @@ questionbank.questions = [
 
         optd: "Shimla",
         optdcorrect: "false",
-        optdpoints: "0"
+        optdpoints: "0",
+
+        slide_id:321
     },
     {
         statement: "Where is the Bay of Bengal?",
@@ -78,7 +84,9 @@ questionbank.questions = [
 
         optd: "South of India",
         optdcorrect: "false",
-        optdpoints: "0"
+        optdpoints: "0",
+
+        slide_id:321
     },
     {
         statement: "Where is Charminar located?",
@@ -98,7 +106,9 @@ questionbank.questions = [
 
         optd: "Patna",
         optdcorrect: "false",
-        optdpoints: "0"
+        optdpoints: "0",
+
+        slide_id:321
     },
     {
         statement: "Where is Kamatipura?",
@@ -118,7 +128,9 @@ questionbank.questions = [
 
         optd: "Goa",
         optdcorrect: "false",
-        optdpoints: "0"
+        optdpoints: "0",
+
+        slide_id:321
     },
     {
         statement: "Where are the Sunderbans located?",
@@ -138,7 +150,9 @@ questionbank.questions = [
 
         optd: "Himachal Pradesh",
         optdcorrect: "false",
-        optdpoints: "0"
+        optdpoints: "0",
+
+        slide_id:321
     },
     {
         statement: "Who is the Father of Our Nation?",
@@ -158,7 +172,9 @@ questionbank.questions = [
 
         optd: "Lee Harvey Oswald",
         optdcorrect: "false",
-        optdpoints: "0"
+        optdpoints: "0",
+
+        slide_id:321
     },
     {
         statement: "Highest Peak in India?",
@@ -178,7 +194,9 @@ questionbank.questions = [
 
         optd: "Deccan Plateau",
         optdcorrect: "false",
-        optdpoints: "0"
+        optdpoints: "0",
+
+        slide_id:321
     },
     {
         statement: "What is the traditional Drink of Goa?",
@@ -198,7 +216,9 @@ questionbank.questions = [
 
         optd: "Fenny",
         optdcorrect: "true",
-        optdpoints: "10"
+        optdpoints: "10",
+
+        slide_id:321
     },
     {
         statement: "Who was called the Nightingale of India?",
@@ -218,6 +238,8 @@ questionbank.questions = [
 
         optd: "Lady GaGa",
         optdcorrect: "false",
-        optdpoints: "0"
+        optdpoints: "0",
+
+        slide_id:321
     }
 ];

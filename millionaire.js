@@ -14,26 +14,28 @@ $(function () {
     initTheme();
     initGame();
     playGame();
+    parent.setGameAttempt(parent.currentIntegratedGame,parent.currentUid);
 });
 
 function initTheme() {
     loadConfig(base);
-    $("#message").css({"background": "url(img/kbc-endgame-texture.png)"});
+    $("#message").css({"background": "url(" + getImg("kbc-endgame-back")+ ")"});
 
     loadConfig(ladder);
-    $("#ladder").css({"background": "url(img/kbc-ladder-texture.png)"});
+    $("#ladder").css({"background": "url(" + getImg("kbc-modal-back") + ")"});
 
     loadConfig(lifelines);
     $("#lifelines .location").addClass("lifeline");
     $("#kbc-lifeline-panel").removeClass("lifeline");
-    $("#kbc-lifeline-panel").css({"background": "url(img/kbc-lifeline-panel-texture.png)"})
+    $("#kbc-lifeline-panel").css({"background": "url(" + getImg("kbc-right-back1") + ")"})
 
     loadConfig(kbc_lifeline);
     $("#kbc_lifeline").attr("id", "kbc-lifeline");
-    $("#kbc-lifeline").css({"background": "url(img/kbc-lifeline-panel-texture.png)"});
+    $("#kbc-lifeline").css({"background": "url(" + getImg("kbc-right-back1") + ")"});
 
     loadConfig(poll);
-    $("#poll").css({"background": "url(img/kbc-lifeline-panel-texture.png)"});
+    $("#poll").css({"background": "url(" + getImg("kbc-right-back1") + ")"});
+
     initQuiz();
 
     loadConfig(player);
@@ -62,6 +64,13 @@ function runGlobalObservers() {
     $("#lifelines .location").mouseout(function() {
         $(".lifeline-text").remove();
     });
+
+    $("#kbc-learn-more").unbind('click').on('click', function() {
+        templateId = $(e.currentTarget).attr('template-id');
+        console.log(templateId);
+        parent.learnModal(templateId);
+        parent.recordKmClick();
+    });
 }
 
 function initGame() {
@@ -75,35 +84,40 @@ function initGame() {
 }
 
 function quizShuffle() {
-    for(var i in Question.all)
+    for(var i in Question.all)  {
         Question.all[i].options = shuffle(Question.all[i].options);
+    }
+
 
     Question.all = shuffle(Question.all);
 }
 
 function answerHover() {
     $(".kbc-answer-block").mouseover(function() {
-        $("#"+$(this).attr("id")).css({"background": "url(img/kbc-answer-hover-texture.png)"});
+        $(this).find('img').attr('src', getImg("kbc-answer-hover-back"));
     });
     $(".kbc-answer-block").mouseout(function() {
-        $("#"+$(this).attr("id")).css({"background": "url(img/kbc-answer-texture.png)"});
+        $(this).find('img').attr('src', getImg("kbc-answer-back"));
     });
 }
 
 function playGame() {
-    $("#player").css({"background": "url(img/kbc-player-texture.png)"});
+    $("#player").css({"background": "url(" + getImg("kbc-player-back") + ")"});
     question = Question.getQuestion(1, flag);
     $('#quiz').fadeIn(function () {
         Question.showQuizPanel(quiz, question);
-        $("#kbc-question").css({"background": "url(img/kbc-question-texture.png)"});
-        $(".kbc-answer-block").css({"background": "url(img/kbc-answer-texture.png)"});
+        $("#kbc-question").css({"background": "url(" + getImg("kbc-question-back") + ")"});
+        $(".kbc-answer-block").find('img').attr('src', getImg("kbc-answer-back"));
+        parent.setQuestionAttempt(question.id);
 
         answerHover();
     });
     $(question).unbind('answered').on('answered', function (e, data) {
         flag++;
         if (data.correct == "true") {
-            $("#"+data.id).css({"background": "url(img/kbc-answer-right-texture.png)"});
+            parent.markQuestionAttemptCorrect();
+            $(data.$this).find('img').attr('src', getImg("kbc-answer-right-back"));
+
             pointsEarned += parseInt(data.points);
             $("#quiz").delay(250).fadeOut(function () {
                 quiz.setState('default');
@@ -143,7 +157,7 @@ function playGame() {
 
 
             $("#messageOk").unbind('click').on('click', function () {
-                $("#poll").css({"background": "url(img/kbc-lifeline-panel3-texture.png)"});
+                $("#poll").css({"background": "url(" + getImg("kbc-right-back3") + ")"});
                 $("#poll").fadeIn();
                 $("#poll").append('<div id="messageOk2">OK</div>');
                 pollSelected = true;
@@ -240,7 +254,7 @@ function setLifeline(lifeline) {
             });
             $("#kbc-lifeline-panel").css({
                 height: "56%",
-                background: "url(img/kbc-lifeline-panel2-texture.png)"
+                background: "url(" + getImg("kbc-right-back2") + ")"
             });
             break;
 
@@ -265,7 +279,7 @@ function setLifeline(lifeline) {
             setTimeout(function() {
                 $("#kbc-lifeline-panel").css({
                     height: "52%",
-                    background: "url(img/kbc-lifeline-panel-texture.png)"
+                    background: "url(" + getImg("kbc-right-back1") + ")"
                 });
             }, 400)
 
