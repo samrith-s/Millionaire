@@ -254,7 +254,7 @@ function setLifeline(lifeline) {
 
             });
             $("#kbc-lifeline-panel").css({
-                height: "56%",
+                height: "54%",
                 background: "url(" + getImg("kbc-right-back2") + ")"
             });
             break;
@@ -267,19 +267,20 @@ function setLifeline(lifeline) {
 
             });
             $("#kbc-lifeline-panel").css({
-                height: "58%"
+                height: "56%"
             });
             break;
 
         default:
             $("#lifelines").animate({
                 position: "relative",
-                top: "68%",
-                height: "29%"
+                height: "29%",
+                top: "68%"
+
             });
             setTimeout(function() {
                 $("#kbc-lifeline-panel").css({
-                    height: "52%",
+                    height: "50%",
                     background: "url(" + getImg("kbc-right-back1") + ")"
                 });
             }, 400)

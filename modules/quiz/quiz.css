@@ -13,23 +13,25 @@
     height: 27.5%;
     width: 89%;
     color: white;
-    padding: 5% 5% 11%;
+    padding: 5%;
     position: absolute;
     font-size: 0.9em;
-    overflow: hidden;
+    overflow: auto;
+    word-break: break-all;
+    border: 2px solid white;
+    border-radius: 30px;
+    background-image: -moz-linear-gradient(left top, rgb(14,173,173) 33%);
+    -moz-border-top-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-left-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-bottom-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-right-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
 }
 
-#kbc-learn-more {
-    position: absolute;
-    color: whitesmoke;
-    right: 6%;
-    top: 35%;
-}
 
 #options-area {
     position: relative;
     left: 2%;
-    top: 41%;
+    top: 42%;
     width: 96%;
     height: 50%;
 
@@ -40,10 +42,16 @@
     margin-top:10px;
     padding: 12px 22px;
     color: white;
+    width: 88%;
     font-size: 0.75em;
     position: relative;
     word-break: break-all;
-    width: 88%;
+
+}
+.kbc-answer-block div{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .kbc-answer-block img {
@@ -53,6 +61,13 @@
     top: 0;
     left: 0;
     z-index: 0;
+    border: 2px solid white;
+    border-radius: 30px;
+    /*background-image: -moz-linear-gradient(left top, rgb(0,0,0) 33%, rgb(0,0,0) 67% );*/
+    -moz-border-top-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-left-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-bottom-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-right-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
 }
 
 .kbc-answer-block div {
@@ -80,5 +95,18 @@
 }
 
 #kbc-learn-more {
+    -webkit-border-radius: 14;
+    -moz-border-radius: 14;
+    border-radius: 14px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 13px;
+    padding: 8px;
+    background: #e89f00;
+    text-decoration: none;
     cursor: pointer;
+    top: 92%; position: absolute;
+    color: black;
+    right: 4%;
+
 }

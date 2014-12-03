@@ -45,7 +45,13 @@ img {
     left: 67%;
     height: 63%;
     top: 3%;
-    padding-top: 1%;
+    padding-top: 1%;border: 2px solid white;
+    border-radius: 30px;
+    background-image: -moz-linear-gradient(left top, rgb(0,0,0) 33%, rgb(0,0,0) 67% );
+    -moz-border-top-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-left-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-bottom-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-right-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
 
 }
 
@@ -72,12 +78,20 @@ img {
 
 #kbc-lifeline-panel {
     position: absolute;
-    top: -1%;
-    height: 52%;
+    top: 1%;
+    height: 50%;
     width: 93%;
     padding: 3%;
     overflow: hidden;
     font-size: 0.9em;
+    padding-top: 3%;
+    border: 2px solid white;
+    border-radius: 30px;
+    background-image: -moz-linear-gradient(left top, rgb(0,0,0) 33%, rgb(0,0,0) 67% );
+    -moz-border-top-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-left-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-bottom-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-right-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
 }
 
 #kbc-lifeline-panel #default {
@@ -172,7 +186,15 @@ img {
     border-radius: 5px;
 }
 #player {
-
+    height: 79%;
+    width: 98%;
+    padding-top: 1%;border: 2px solid white;
+    border-radius: 30px;
+    background-image: -moz-linear-gradient(left top, rgb(0,0,0) 33%, rgb(0,0,0) 67% );
+    -moz-border-top-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-left-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-bottom-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-right-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
 }
 
 #ladder .location .completed {
@@ -190,6 +212,13 @@ img {
     position: absolute;
     width: 28.3%;
     z-index: 2;
+    border: 2px solid white;
+    border-radius: 30px;
+    background-image: -moz-linear-gradient(left top, rgb(0,0,0) 33%, rgb(0,0,0) 67% );
+    -moz-border-top-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-left-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-bottom-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-right-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
 }
 
 #poll .location {
@@ -220,4 +249,11 @@ img {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    border: 2px solid white;
+    border-radius: 30px;
+    background-image: -moz-linear-gradient(left top, rgb(0,0,0) 33%, rgb(0,0,0) 67% );
+    -moz-border-top-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-left-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-bottom-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    -moz-border-right-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
 }
